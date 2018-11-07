@@ -1,0 +1,29 @@
+{
+    "settings" : {
+        "index" : {
+            "refresh_interval" : -1,
+            "number_of_replicas" : 0
+        }
+    },
+    "mappings": {
+        "_doc": {
+            "properties": {
+                "createAt": {
+                    "type": "date"
+                },
+                "updateAt": {
+                    "type": "date"
+                },
+                "action_traces": {
+                    "enabled": false
+                },
+                "failed_dtrx_trace": {
+                    "enabled": false
+                },
+                "except": {
+                    "enabled": false
+                }
+            }
+        }
+    }
+}

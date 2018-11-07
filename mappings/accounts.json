@@ -1,0 +1,32 @@
+{
+    "settings" : {
+        "index" : {
+            "refresh_interval" : -1,
+            "number_of_replicas" : 0
+        }
+    },
+    "mappings": {
+        "_doc": {
+            "properties": {
+                "name": {
+                    "type": "text"
+                },
+                "pub_keys": {
+                    "type": "nested"
+                },
+                "account_controls": {
+                    "type": "nested"
+                },
+                "abi": {
+                    "enabled": false
+                },
+                "ceateAt": {
+                    "type": "date"
+                },
+                "updateAt": {
+                    "type": "date"
+                }
+            }
+        }
+    }
+}
