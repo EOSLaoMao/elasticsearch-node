@@ -1,23 +1,101 @@
 {
-    "settings" : {
-        "index" : {
-            "refresh_interval" : -1,
-            "number_of_replicas" : 0
-        }
-    },
-    "mappings": {
-        "_doc": {
-            "properties": {
-                "createAt": {
-                    "type": "date"
-                },
-                "updateAt": {
-                    "type": "date"
-                },
-                "block": {
-                    "enabled": false
-                }
-            }
-        }
+  "settings": {
+    "index": {
+      "refresh_interval": -1,
+      "number_of_replicas": 0,
+      "sort": {
+        "field" : "block.timestamp", 
+        "order" : "desc",
+        "missing": "_last"
+      }
     }
+  },
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "block": {
+          "properties": {
+            "action_mroot": {
+              "type": "keyword"
+            },
+            "block_id": {
+              "type": "keyword"
+            },
+            "block_num": {
+              "type": "long"
+            },
+            "confirmed": {
+              "type": "long"
+            },
+            "createAt": {
+              "type": "date"
+            },
+            "irreversible": {
+              "type": "boolean"
+            },
+            "new_producers": {
+              "properties": {
+                "producers": {
+                  "properties": {
+                    "block_signing_key": {
+                      "type": "keyword"
+                    },
+                    "producer_name": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "version": {
+                  "type": "long"
+                }
+              }
+            },
+            "previous": {
+              "type": "keyword"
+            },
+            "producer": {
+              "type": "keyword"
+            },
+            "producer_signature": {
+              "type": "keyword"
+            },
+            "schedule_version": {
+              "type": "long"
+            },
+            "timestamp": {
+              "type": "date"
+            },
+            "transaction_mroot": {
+              "type": "keyword"
+            },
+            "transactions": {
+              "type": "object",
+              "enabled": false
+            },
+            "validated": {
+              "type": "boolean"
+            }
+          }
+        },
+        "block_id": {
+          "type": "keyword"
+        },
+        "block_num": {
+          "type": "long"
+        },
+        "createAt": {
+          "type": "date"
+        },
+        "irreversible": {
+          "type": "boolean"
+        },
+        "updateAt": {
+          "type": "date"
+        },
+        "validated": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
 }

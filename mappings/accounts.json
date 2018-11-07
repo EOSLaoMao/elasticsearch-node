@@ -1,32 +1,54 @@
 {
-    "settings" : {
-        "index" : {
-            "refresh_interval" : -1,
-            "number_of_replicas" : 0
-        }
-    },
-    "mappings": {
-        "_doc": {
-            "properties": {
-                "name": {
-                    "type": "text"
-                },
-                "pub_keys": {
-                    "type": "nested"
-                },
-                "account_controls": {
-                    "type": "nested"
-                },
-                "abi": {
-                    "enabled": false
-                },
-                "ceateAt": {
-                    "type": "date"
-                },
-                "updateAt": {
-                    "type": "date"
-                }
-            }
-        }
+  "settings": {
+    "index": {
+      "refresh_interval": -1,
+      "number_of_replicas": 0
     }
+  },
+  "mappings ": {
+    "_doc": {
+      "properties": {
+        "name": {
+          "type": "text"
+        },
+        "creator": {
+          "type": "keyword"
+        },
+        "pub_keys": {
+          "type": "nested",
+          "properties": {
+            "key": {
+              "type": "keyword"
+            },
+            "permission": {
+              "type": "keyword"
+            }
+          }
+        },
+        "account_controls": {
+          "type": "nested",
+          "properties": {
+            "name": {
+              "type": "keyword"
+            },
+            "permission": {
+              "type": "keyword"
+            }
+          }
+        },
+        "abi": {
+          "enabled": false
+        },
+        "account_create_time": {
+          "type": "date"
+        },
+        "createAt": {
+          "type": "date"
+        },
+        "updateAt": {
+          "type": "date"
+        }
+      }
+    }
+  }
 }

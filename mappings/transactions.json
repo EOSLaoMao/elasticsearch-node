@@ -1,23 +1,79 @@
 {
-    "settings" : {
-        "index" : {
-            "refresh_interval" : -1,
-            "number_of_replicas" : 0
-        }
-    },
-    "mappings": {
-        "_doc": {
-            "properties": {
-                "createAt": {
-                    "type": "date"
-                },
-                "updateAt": {
-                    "type": "date"
-                },
-                "actions": {
-                    "enabled": false
-                }
-            }
-        }
+  "settings": {
+    "index": {
+      "refresh_interval": -1,
+      "number_of_replicas": 0,
+      "sort": {
+          "field" : [ "block_num", "updateAt", "createAt"], 
+          "order" : [ "desc", "desc", "desc"],
+          "missing": [ "_last", "_last", "_last" ]
+      }
     }
+  },
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "accepted": {
+          "type": "boolean"
+        },
+        "actions": {
+          "enabled": false
+        },
+        "block_id": {
+          "type": "keyword"
+        },
+        "block_num": {
+          "type": "long"
+        },
+        "context_free_actions": {
+          "enabled": false
+        },
+        "context_free_data": {
+          "enabled": false
+        },
+        "createAt": {
+          "type": "date"
+        },
+        "delay_sec": {
+          "type": "long"
+        },
+        "expiration": {
+          "type": "date"
+        },
+        "implicit": {
+          "type": "boolean"
+        },
+        "irreversible": {
+          "type": "boolean"
+        },
+        "max_cpu_usage_ms": {
+          "type": "long"
+        },
+        "max_net_usage_words": {
+          "type": "long"
+        },
+        "ref_block_num": {
+          "type": "long"
+        },
+        "ref_block_prefix": {
+          "type": "long"
+        },
+        "scheduled": {
+          "type": "boolean"
+        },
+        "signatures": {
+          "type": "keyword"
+        },
+        "signing_keys": {
+          "type": "keyword"
+        },
+        "trx_id": {
+          "type": "keyword"
+        },
+        "updateAt": {
+          "type": "date"
+        }
+      }
+    }
+  }
 }

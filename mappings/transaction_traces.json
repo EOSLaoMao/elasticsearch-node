@@ -1,29 +1,68 @@
 {
-    "settings" : {
-        "index" : {
-            "refresh_interval" : -1,
-            "number_of_replicas" : 0
-        }
-    },
-    "mappings": {
-        "_doc": {
-            "properties": {
-                "createAt": {
-                    "type": "date"
-                },
-                "updateAt": {
-                    "type": "date"
-                },
-                "action_traces": {
-                    "enabled": false
-                },
-                "failed_dtrx_trace": {
-                    "enabled": false
-                },
-                "except": {
-                    "enabled": false
-                }
-            }
-        }
+  "settings": {
+    "index": {
+      "refresh_interval": -1,
+      "number_of_replicas": 0,
+      "sort": {
+        "field" : [ "block_time", "createAt" ], 
+        "order" : [ "desc", "desc" ],
+        "missing": [ "_last", "_last" ]
+      }
     }
+  },
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "action_traces": {
+          "type": "object",
+          "enabled": false
+        },
+        "block_num": {
+          "type": "long"
+        },
+        "block_time": {
+          "type": "date"
+        },
+        "createAt": {
+          "type": "date"
+        },
+        "elapsed": {
+          "type": "long"
+        },
+        "except": {
+          "type": "object",
+          "enabled": false
+        },
+        "failed_dtrx_trace": {
+          "type": "object",
+          "enabled": false
+        },
+        "id": {
+          "type": "keyword"
+        },
+        "net_usage": {
+          "type": "long"
+        },
+        "producer_block_id": {
+          "type": "keyword"
+        },
+        "receipt": {
+          "properties": {
+            "cpu_usage_us": {
+              "type": "long"
+            },
+            "net_usage_words": {
+              "type": "long"
+            },
+            "status": {
+              "type": "keyword"
+            }
+          }
+        },
+        "scheduled": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
 }
