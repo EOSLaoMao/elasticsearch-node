@@ -5,50 +5,22 @@
       "number_of_replicas": 0
     }
   },
-  "mappings ": {
+  "mappings": {
     "_doc": {
       "properties": {
         "name": {
           "type": "text"
         },
-        "creator": {
-          "type": "text",
-          "fields": {
-            "raw": {
-              "type": "keyword",
-              "ignore_above": 256
-            }
-          }
-        },
         "pub_keys": {
-          "type": "nested",
-          "properties": {
-            "key": {
-              "type": "keyword"
-            },
-            "permission": {
-              "type": "keyword"
-            }
-          }
+          "type": "nested"
         },
         "account_controls": {
-          "type": "nested",
-          "properties": {
-            "name": {
-              "type": "keyword"
-            },
-            "permission": {
-              "type": "keyword"
-            }
-          }
+          "type": "nested"
         },
         "abi": {
           "enabled": false
         },
-        "account_create_time": {
-          "type": "date"
-        },
-        "createAt": {
+        "ceateAt": {
           "type": "date"
         },
         "updateAt": {
@@ -57,3 +29,4 @@
       }
     }
   }
+}
