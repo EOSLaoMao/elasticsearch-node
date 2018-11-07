@@ -1,23 +1,42 @@
 {
-    "settings" : {
-        "index" : {
-            "refresh_interval" : -1,
-            "number_of_replicas" : 0
-        }
-    },
-    "mappings": {
-        "_doc": {
-            "properties": {
-                "createAt": {
-                    "type": "date"
-                },
-                "updateAt": {
-                    "type": "date"
-                },
-                "block_header_state": {
-                    "enabled": false
-                }
-            }
-        }
+  "settings": {
+    "index": {
+      "refresh_interval": -1,
+      "number_of_replicas": 0
     }
+  },
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "block_header_state": {
+          "type": "object",
+          "enabled": false
+        },
+        "block_id": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "block_num": {
+          "type": "long"
+        },
+        "createAt": {
+          "type": "date"
+        },
+        "irreversible": {
+          "type": "boolean"
+        },
+        "updateAt": {
+          "type": "date"
+        },
+        "validated": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
 }

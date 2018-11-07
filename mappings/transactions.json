@@ -1,23 +1,142 @@
 {
-    "settings" : {
-        "index" : {
-            "refresh_interval" : -1,
-            "number_of_replicas" : 0
-        }
-    },
-    "mappings": {
-        "_doc": {
-            "properties": {
-                "createAt": {
-                    "type": "date"
-                },
-                "updateAt": {
-                    "type": "date"
-                },
-                "actions": {
-                    "enabled": false
-                }
-            }
-        }
+  "settings": {
+    "index": {
+      "refresh_interval": -1,
+      "number_of_replicas": 0
     }
+  },
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "accepted": {
+          "type": "boolean"
+        },
+        "actions": {
+          "type": "object",
+          "enabled": false
+        },
+        "block_id": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "block_num": {
+          "type": "long"
+        },
+        "context_free_actions": {
+          "properties": {
+            "account": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "data": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "name": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "context_free_data": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "createAt": {
+          "type": "date"
+        },
+        "createdAt": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "delay_sec": {
+          "type": "long"
+        },
+        "expiration": {
+          "type": "date"
+        },
+        "implicit": {
+          "type": "boolean"
+        },
+        "irreversible": {
+          "type": "boolean"
+        },
+        "max_cpu_usage_ms": {
+          "type": "long"
+        },
+        "max_net_usage_words": {
+          "type": "long"
+        },
+        "ref_block_num": {
+          "type": "long"
+        },
+        "ref_block_prefix": {
+          "type": "long"
+        },
+        "scheduled": {
+          "type": "boolean"
+        },
+        "signatures": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "signing_keys": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "trx_id": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "updateAt": {
+          "type": "date"
+        }
+      }
+    }
+  }
 }
