@@ -12,13 +12,7 @@
           "type": "text"
         },
         "creator": {
-          "type": "text",
-          "fields": {
-            "raw": {
-              "type": "keyword",
-              "ignore_above": 256
-            }
-          }
+          "type": "keyword"
         },
         "pub_keys": {
           "type": "nested",
@@ -57,3 +51,4 @@
       }
     }
   }
+}

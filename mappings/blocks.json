@@ -2,7 +2,12 @@
   "settings": {
     "index": {
       "refresh_interval": -1,
-      "number_of_replicas": 0
+      "number_of_replicas": 0,
+      "sort": {
+        "field" : "block.timestamp", 
+        "order" : "desc",
+        "missing": "_last"
+      }
     }
   },
   "mappings": {
@@ -11,22 +16,10 @@
         "block": {
           "properties": {
             "action_mroot": {
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "type": "keyword",
-                  "ignore_above": 256
-                }
-              }
+              "type": "keyword"
             },
             "block_id": {
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "type": "keyword",
-                  "ignore_above": 256
-                }
-              }
+              "type": "keyword"
             },
             "block_num": {
               "type": "long"
@@ -45,22 +38,10 @@
                 "producers": {
                   "properties": {
                     "block_signing_key": {
-                      "type": "text",
-                      "fields": {
-                        "keyword": {
-                          "type": "keyword",
-                          "ignore_above": 256
-                        }
-                      }
+                      "type": "keyword"
                     },
                     "producer_name": {
-                      "type": "text",
-                      "fields": {
-                        "keyword": {
-                          "type": "keyword",
-                          "ignore_above": 256
-                        }
-                      }
+                      "type": "keyword"
                     }
                   }
                 },
@@ -70,31 +51,13 @@
               }
             },
             "previous": {
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "type": "keyword",
-                  "ignore_above": 256
-                }
-              }
+              "type": "keyword"
             },
             "producer": {
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "type": "keyword",
-                  "ignore_above": 256
-                }
-              }
+              "type": "keyword"
             },
             "producer_signature": {
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "type": "keyword",
-                  "ignore_above": 256
-                }
-              }
+              "type": "keyword"
             },
             "schedule_version": {
               "type": "long"
@@ -103,20 +66,11 @@
               "type": "date"
             },
             "transaction_mroot": {
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "type": "keyword",
-                  "ignore_above": 256
-                }
-              }
+              "type": "keyword"
             },
             "transactions": {
               "type": "object",
               "enabled": false
-            },
-            "updateAt": {
-              "type": "date"
             },
             "validated": {
               "type": "boolean"
@@ -124,37 +78,19 @@
           }
         },
         "block_id": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "ignore_above": 256
-            }
-          }
+          "type": "keyword"
         },
         "block_num": {
           "type": "long"
         },
         "createAt": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "ignore_above": 256
-            }
-          }
+          "type": "date"
         },
         "irreversible": {
           "type": "boolean"
         },
         "updateAt": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "ignore_above": 256
-            }
-          }
+          "type": "date"
         },
         "validated": {
           "type": "boolean"

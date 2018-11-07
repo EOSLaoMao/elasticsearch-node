@@ -2,7 +2,12 @@
   "settings": {
     "index": {
       "refresh_interval": -1,
-      "number_of_replicas": 0
+      "number_of_replicas": 0,
+      "sort": {
+          "field" : [ "block_num", "updateAt", "createAt"], 
+          "order" : [ "desc", "desc", "desc"],
+          "missing": [ "_last", "_last", "_last" ]
+      }
     }
   },
   "mappings": {
@@ -12,72 +17,22 @@
           "type": "boolean"
         },
         "actions": {
-          "type": "object",
           "enabled": false
         },
         "block_id": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "ignore_above": 256
-            }
-          }
+          "type": "keyword"
         },
         "block_num": {
           "type": "long"
         },
         "context_free_actions": {
-          "properties": {
-            "account": {
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "type": "keyword",
-                  "ignore_above": 256
-                }
-              }
-            },
-            "data": {
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "type": "keyword",
-                  "ignore_above": 256
-                }
-              }
-            },
-            "name": {
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "type": "keyword",
-                  "ignore_above": 256
-                }
-              }
-            }
-          }
+          "enabled": false
         },
         "context_free_data": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "ignore_above": 256
-            }
-          }
+          "enabled": false
         },
         "createAt": {
           "type": "date"
-        },
-        "createdAt": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "ignore_above": 256
-            }
-          }
         },
         "delay_sec": {
           "type": "long"
@@ -107,31 +62,13 @@
           "type": "boolean"
         },
         "signatures": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "ignore_above": 256
-            }
-          }
+          "type": "keyword"
         },
         "signing_keys": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "ignore_above": 256
-            }
-          }
+          "type": "keyword"
         },
         "trx_id": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "ignore_above": 256
-            }
-          }
+          "type": "keyword"
         },
         "updateAt": {
           "type": "date"

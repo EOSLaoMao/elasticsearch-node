@@ -2,7 +2,12 @@
   "settings": {
     "index": {
       "refresh_interval": -1,
-      "number_of_replicas": 0
+      "number_of_replicas": 0,
+      "sort": {
+        "field" : [ "block_time", "createAt" ], 
+        "order" : [ "desc", "desc" ],
+        "missing": [ "_last", "_last" ]
+      }
     }
   },
   "mappings": {
@@ -32,9 +37,6 @@
         "createAt": {
           "type": "date"
         },
-        "updateAt": {
-          "type": "date"
-        },
         "receipt": {
           "enabled": false
         },
@@ -44,15 +46,7 @@
               "type": "keyword"
             },
             "authorization": {
-              "type": "nested",
-              "properties": {
-                "actor": {
-                  "type": "keyword"
-                },
-                "permission": {
-                  "type": "keyword"
-                }
-              }
+              "enabled": false
             },
             "account": {
               "type": "keyword"
@@ -61,35 +55,7 @@
               "enabled": false
             },
             "data": {
-              "properties": {
-                "from": {
-                  "type": "keyword"
-                },
-                "to": {
-                  "type": "keyword"
-                },
-                "quantity": {
-                  "type": "text"
-                },
-                "memo": {
-                  "type": "text"
-                },
-                "vmtype": {
-                  "type": "keyword"
-                },
-                "vmversion": {
-                  "type": "keyword"
-                },
-                "code": {
-                  "enabled": false
-                },
-                "abi": {
-                  "enabled": false
-                },
-                "account": {
-                  "type": "keyword"
-                }
-              }
+              "enabled": false
             }
           }
         },

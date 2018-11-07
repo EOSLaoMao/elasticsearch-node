@@ -2,7 +2,12 @@
   "settings": {
     "index": {
       "refresh_interval": -1,
-      "number_of_replicas": 0
+      "number_of_replicas": 0,
+      "sort": {
+        "field" : [ "block_time", "createAt" ], 
+        "order" : [ "desc", "desc" ],
+        "missing": [ "_last", "_last" ]
+      }
     }
   },
   "mappings": {
@@ -33,25 +38,13 @@
           "enabled": false
         },
         "id": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "ignore_above": 256
-            }
-          }
+          "type": "keyword"
         },
         "net_usage": {
           "type": "long"
         },
         "producer_block_id": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "ignore_above": 256
-            }
-          }
+          "type": "keyword"
         },
         "receipt": {
           "properties": {
@@ -62,21 +55,12 @@
               "type": "long"
             },
             "status": {
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "type": "keyword",
-                  "ignore_above": 256
-                }
-              }
+              "type": "keyword"
             }
           }
         },
         "scheduled": {
           "type": "boolean"
-        },
-        "updateAt": {
-          "type": "date"
         }
       }
     }
