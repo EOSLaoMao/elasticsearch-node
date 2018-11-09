@@ -55,7 +55,7 @@
               "enabled": false
             },
             "data": {
-              "enabled": false
+              "type": "text"
             }
           }
         },
