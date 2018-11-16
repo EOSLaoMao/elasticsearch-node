@@ -1,0 +1,55 @@
+actions:
+  1:
+    action: delete_indices
+    description: Delete the index accounts
+    options:
+      continue_if_exception: False
+    filters:
+    - filtertype: pattern
+      kind: regex
+      value: '^accounts.*'
+  2:
+    action: delete_indices
+    description: Delete the index action_traces
+    options:
+      continue_if_exception: False
+    filters:
+    - filtertype: pattern
+      kind: regex
+      value: '^action_traces.*'
+  3:
+    action: delete_indices
+    description: Delete the index block_states
+    options:
+      continue_if_exception: False
+    filters:
+    - filtertype: pattern
+      kind: regex
+      value: '^block_states.*'
+  4:
+    action: delete_indices
+    description: Delete the index blocks
+    options:
+      continue_if_exception: False
+    filters:
+    - filtertype: pattern
+      kind: regex
+      value: '^blocks.*'
+  5:
+    action: delete_indices
+    description: Delete the index transaction_traces
+    options:
+      continue_if_exception: False
+    filters:
+    - filtertype: pattern
+      kind: regex
+      value: '^transaction_traces.*'
+  6:
+    action: delete_indices
+    description: Delete the index transactions
+    options:
+      continue_if_exception: False
+    filters:
+    - filtertype: pattern
+      kind: regex
+      value: '^transactions.*'

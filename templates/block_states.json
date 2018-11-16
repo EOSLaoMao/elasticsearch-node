@@ -1,13 +1,10 @@
 {
+  "index_patterns" : ["block_states*"],
   "settings": {
     "index": {
+      "number_of_shards": 5,
       "refresh_interval": -1,
-      "number_of_replicas": 0,
-      "sort": {
-        "field" : [ "block_num", "updateAt", "createAt"], 
-        "order" : [ "desc", "desc", "desc"],
-        "missing": [ "_last", "_last", "_last" ]
-      }
+      "number_of_replicas": 0
     }
   },
   "mappings": {
@@ -28,9 +25,6 @@
         },
         "irreversible": {
           "type": "boolean"
-        },
-        "updateAt": {
-          "type": "date"
         },
         "validated": {
           "type": "boolean"

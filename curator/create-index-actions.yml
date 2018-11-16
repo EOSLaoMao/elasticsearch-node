@@ -1,0 +1,49 @@
+actions:
+  1:
+    action: create_index
+    description: Create index as named
+    options:
+      name: accounts-000001
+      extra_settings:
+        aliases:
+          accounts: {}
+  2:
+    action: create_index
+    description: Create index as named
+    options:
+      name: action_traces-000001
+      extra_settings:
+        aliases:
+          action_traces: {}
+  3:
+    action: create_index
+    description: Create index as named
+    options:
+      name: block_states-000001
+      extra_settings:
+        aliases:
+          block_states: {}
+  4:
+    action: create_index
+    description: Create index as named
+    options:
+      name: blocks-000001
+      extra_settings:
+        aliases:
+          blocks: {}
+  5:
+    action: create_index
+    description: Create index as named
+    options:
+      name: transaction_traces-000001
+      extra_settings:
+        aliases:
+          transaction_traces: {}
+  6:
+    action: create_index
+    description: Create index as named
+    options:
+      name: transactions-000001
+      extra_settings:
+        aliases:
+          transactions: {}

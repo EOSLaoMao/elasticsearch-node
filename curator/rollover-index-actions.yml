@@ -1,0 +1,68 @@
+---
+# Remember, leave a key empty if there is no value.  None will be a string,
+# not a Python "NoneType"
+#
+# Also remember that all examples have 'disable_action' set to True.  If you
+# want to use this action as a template, be sure to set this to False after
+# copying it.
+actions:
+  1:
+    action: rollover
+    description: Rollover the index accounts
+    options:
+      disable_action: True
+      name: accounts
+      conditions:
+        max_age: 365d
+        max_docs: 10000000
+        max_size: 100gb
+  2:
+    action: rollover
+    description: Rollover the index action_traces
+    options:
+      disable_action: False
+      name: action_traces
+      conditions:
+        max_age: 365d
+        max_docs: 200000000
+        max_size: 100gb
+  3:
+    action: rollover
+    description: Rollover the index block_states
+    options:
+      disable_action: False
+      name: block_states
+      conditions:
+        max_age: 365d
+        max_docs: 20000000
+        max_size: 100gb
+  4:
+    action: rollover
+    description: Rollover the index blocks
+    options:
+      disable_action: False
+      name: blocks
+      conditions:
+        max_age: 365d
+        max_docs: 16000000
+        max_size: 100gb
+  5:
+    action: rollover
+    description: Rollover the index transaction_traces
+    options:
+      disable_action: False
+      name: transaction_traces
+      conditions:
+        max_age: 365d
+        max_docs: 100000000
+        max_size: 100gb
+  6:
+    action: rollover
+    description: Rollover the index transactions
+    options:
+      disable_action: False
+      name: transactions
+      conditions:
+        max_age: 365d
+        max_docs: 100000000
+        max_size: 100gb

@@ -1,13 +1,10 @@
 {
+  "index_patterns" : ["action_traces*"],
   "settings": {
     "index": {
+      "number_of_shards": 5,
       "refresh_interval": -1,
-      "number_of_replicas": 0,
-      "sort": {
-        "field" : [ "block_time", "createAt" ], 
-        "order" : [ "desc", "desc" ],
-        "missing": [ "_last", "_last" ]
-      }
+      "number_of_replicas": 0
     }
   },
   "mappings": {
@@ -32,9 +29,6 @@
           "type": "long"
         },
         "block_time": {
-          "type": "date"
-        },
-        "createAt": {
           "type": "date"
         },
         "receipt": {

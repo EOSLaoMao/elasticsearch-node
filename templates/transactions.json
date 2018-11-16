@@ -1,13 +1,10 @@
 {
+  "index_patterns" : ["transactions*"],
   "settings": {
     "index": {
+      "number_of_shards": 5,
       "refresh_interval": -1,
-      "number_of_replicas": 0,
-      "sort": {
-          "field" : [ "block_num", "updateAt", "createAt"], 
-          "order" : [ "desc", "desc", "desc"],
-          "missing": [ "_last", "_last", "_last" ]
-      }
+      "number_of_replicas": 0
     }
   },
   "mappings": {
@@ -30,9 +27,6 @@
         },
         "context_free_data": {
           "enabled": false
-        },
-        "createAt": {
-          "type": "date"
         },
         "delay_sec": {
           "type": "long"
@@ -69,9 +63,6 @@
         },
         "trx_id": {
           "type": "keyword"
-        },
-        "updateAt": {
-          "type": "date"
         }
       }
     }
