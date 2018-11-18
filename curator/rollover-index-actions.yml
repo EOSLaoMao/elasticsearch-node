@@ -44,7 +44,7 @@ actions:
       name: blocks
       conditions:
         max_age: 365d
-        max_docs: 16000000
+        max_docs: 20000000
         max_size: 100gb
   5:
     action: rollover
