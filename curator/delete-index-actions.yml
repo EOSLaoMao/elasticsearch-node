@@ -3,7 +3,7 @@ actions:
     action: delete_indices
     description: Delete the index accounts
     options:
-      continue_if_exception: False
+      disable_action: False
     filters:
     - filtertype: pattern
       kind: regex
@@ -12,7 +12,7 @@ actions:
     action: delete_indices
     description: Delete the index action_traces
     options:
-      continue_if_exception: False
+      disable_action: False
     filters:
     - filtertype: pattern
       kind: regex
@@ -21,7 +21,7 @@ actions:
     action: delete_indices
     description: Delete the index block_states
     options:
-      continue_if_exception: False
+      disable_action: False
     filters:
     - filtertype: pattern
       kind: regex
@@ -30,7 +30,7 @@ actions:
     action: delete_indices
     description: Delete the index blocks
     options:
-      continue_if_exception: False
+      disable_action: True
     filters:
     - filtertype: pattern
       kind: regex
@@ -39,7 +39,7 @@ actions:
     action: delete_indices
     description: Delete the index transaction_traces
     options:
-      continue_if_exception: False
+      disable_action: False
     filters:
     - filtertype: pattern
       kind: regex
@@ -48,7 +48,7 @@ actions:
     action: delete_indices
     description: Delete the index transactions
     options:
-      continue_if_exception: False
+      disable_action: True
     filters:
     - filtertype: pattern
       kind: regex

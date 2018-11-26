@@ -1,5 +1,7 @@
 {
-  "index_patterns" : ["block_states*"],
+  "index_patterns": [
+    "block_states*"
+  ],
   "settings": {
     "index": {
       "number_of_shards": 5,
@@ -10,24 +12,53 @@
   "mappings": {
     "_doc": {
       "properties": {
-        "block_header_state": {
-          "type": "object",
-          "enabled": false
-        },
         "block_id": {
           "type": "keyword"
         },
         "block_num": {
           "type": "long"
         },
-        "createAt": {
-          "type": "date"
-        },
         "irreversible": {
           "type": "boolean"
         },
         "validated": {
           "type": "boolean"
+        },
+        "block": {
+          "type": "object",
+          "enabled": false
+        },
+        "confirm_count": {
+          "type": "object",
+          "enabled": false
+        },
+        "confirmations": {
+          "type": "object",
+          "enabled": false
+        },
+        "producer_to_last_implied_irb": {
+          "type": "object",
+          "enabled": false
+        },
+        "producer_to_last_produced": {
+          "type": "object",
+          "enabled": false
+        },
+        "blockroot_merkle": {
+          "type": "object",
+          "enabled": false
+        },
+        "active_schedule": {
+          "type": "object",
+          "enabled": false
+        },
+        "pending_schedule": {
+          "type": "object",
+          "enabled": false
+        },
+        "header.header_extensions": {
+          "type": "object",
+          "enabled": false
         }
       }
     }

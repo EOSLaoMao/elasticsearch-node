@@ -34,24 +34,23 @@
         "receipt": {
           "enabled": false
         },
-        "act": {
-          "properties": {
-            "name": {
-              "type": "keyword"
-            },
-            "authorization": {
-              "enabled": false
-            },
-            "account": {
-              "type": "keyword"
-            },
-            "hex_data": {
-              "enabled": false
-            },
-            "data": {
-              "type": "text"
-            }
-          }
+        "act.name": {
+          "type": "keyword"
+        },
+        "act.authorization": {
+            "enabled": false
+        },
+        "act.account": {
+            "type": "keyword"
+        },
+        "act.hex_data": {
+            "enabled": false
+        },
+        "act.text_data": {
+            "type": "text"
+        },
+        "act.data": {
+            "enabled": false
         },
         "account_ram_deltas": {
           "enabled": false

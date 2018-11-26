@@ -28,6 +28,7 @@ actions:
     description: Create index as named
     options:
       name: blocks-000001
+      disable_action: True
       extra_settings:
         aliases:
           blocks: {}
@@ -44,6 +45,7 @@ actions:
     description: Create index as named
     options:
       name: transactions-000001
+      disable_action: True
       extra_settings:
         aliases:
           transactions: {}
