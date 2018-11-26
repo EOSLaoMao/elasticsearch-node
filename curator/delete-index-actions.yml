@@ -48,7 +48,7 @@ actions:
     action: delete_indices
     description: Delete the index transactions
     options:
-      disable_action: True
+      disable_action: False
     filters:
     - filtertype: pattern
       kind: regex

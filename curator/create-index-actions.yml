@@ -45,7 +45,7 @@ actions:
     description: Create index as named
     options:
       name: transactions-000001
-      disable_action: True
+      disable_action: False
       extra_settings:
         aliases:
           transactions: {}

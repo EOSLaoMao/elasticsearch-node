@@ -38,19 +38,16 @@
           "type": "keyword"
         },
         "act.authorization": {
-            "enabled": false
+          "enabled": false
         },
         "act.account": {
-            "type": "keyword"
+          "type": "keyword"
         },
         "act.hex_data": {
-            "enabled": false
-        },
-        "act.text_data": {
-            "type": "text"
+          "enabled": false
         },
         "act.data": {
-            "enabled": false
+          "type": "text"
         },
         "account_ram_deltas": {
           "enabled": false

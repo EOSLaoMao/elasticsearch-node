@@ -11,6 +11,7 @@ actions:
     description: Rollover the index accounts
     options:
       disable_action: True
+      continue_if_exception: True
       name: accounts
       conditions:
         max_age: 365d
@@ -21,20 +22,22 @@ actions:
     description: Rollover the index action_traces
     options:
       disable_action: False
+      continue_if_exception: True
       name: action_traces
       conditions:
         max_age: 365d
-        max_docs: 200000000
+        max_docs: 300000000
         max_size: 100gb
   3:
     action: rollover
     description: Rollover the index block_states
     options:
       disable_action: False
+      continue_if_exception: True
       name: block_states
       conditions:
         max_age: 365d
-        max_docs: 20000000
+        max_docs: 30000000
         max_size: 100gb
   4:
     action: rollover
@@ -42,6 +45,7 @@ actions:
     options:
       name: blocks
       disable_action: True
+      continue_if_exception: True
       conditions:
         max_age: 365d
         max_docs: 20000000
@@ -51,18 +55,20 @@ actions:
     description: Rollover the index transaction_traces
     options:
       disable_action: False
+      continue_if_exception: True
       name: transaction_traces
       conditions:
         max_age: 365d
-        max_docs: 100000000
+        max_docs: 200000000
         max_size: 100gb
   6:
     action: rollover
     description: Rollover the index transactions
     options:
       name: transactions
-      disable_action: True
+      disable_action: False
+      continue_if_exception: True
       conditions:
         max_age: 365d
-        max_docs: 100000000
+        max_docs: 200000000
         max_size: 100gb
