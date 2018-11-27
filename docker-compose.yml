@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  nodeosd:
+    image: eoslaomao/eosio-elastic:1.4.3
+    command: /opt/eosio/bin/nodeos --data-dir /opt/eosio/bin/data-dir --config-dir /opt/eosio/bin/config-dir --replay-blockchain
+    volumes:
+      - ./data:/opt/eosio/bin/data-dir
+      - ./config:/opt/eosio/bin/config-dir
+    cap_add:
+      - IPC_LOCK
+    depends_on:
+      - redis
+    stop_grace_period: 5m
+
+  redis:
+    image: redis
+    command: redis-server --appendonly yes
+    ports:
+      - 6379:6379
+    volumes:
+      - ./redis/data:/data
