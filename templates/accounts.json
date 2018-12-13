@@ -2,7 +2,7 @@
   "index_patterns" : ["accounts*"],
   "settings": {
     "index": {
-      "number_of_shards": 5,
+      "number_of_shards": 3,
       "refresh_interval": -1,
       "number_of_replicas": 0
     }

@@ -4,9 +4,11 @@
   ],
   "settings": {
     "index": {
-      "number_of_shards": 5,
+      "number_of_shards": 3,
       "refresh_interval": -1,
-      "number_of_replicas": 0
+      "number_of_replicas": 0,
+      "sort.field" : "block_num",
+      "sort.order" : "desc"
     },
     "index.codec": "best_compression"
   },
