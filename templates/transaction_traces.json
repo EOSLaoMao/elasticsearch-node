@@ -43,18 +43,14 @@
         "producer_block_id": {
           "type": "keyword"
         },
-        "receipt": {
-          "properties": {
-            "cpu_usage_us": {
-              "type": "long"
-            },
-            "net_usage_words": {
-              "type": "long"
-            },
-            "status": {
-              "type": "keyword"
-            }
-          }
+        "receipt.cpu_usage_us": {
+            "type": "long"
+        },
+        "receipt.net_usage_words": {
+            "type": "long"
+        },
+        "receipt.status": {
+            "type": "keyword"
         },
         "scheduled": {
           "type": "boolean"

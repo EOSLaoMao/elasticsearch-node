@@ -31,22 +31,14 @@
         "irreversible": {
           "type": "boolean"
         },
-        "new_producers": {
-          "properties": {
-            "producers": {
-              "properties": {
-                "block_signing_key": {
-                  "type": "keyword"
-                },
-                "producer_name": {
-                  "type": "keyword"
-                }
-              }
-            },
-            "version": {
-              "type": "long"
-            }
-          }
+        "new_producers.producers.block_signing_key": {
+            "type": "keyword"
+        },
+        "new_producers.producers.producer_name": {
+            "type": "keyword"
+        },
+        "new_producers.version": {
+            "type": "long"
         },
         "previous": {
           "type": "keyword"

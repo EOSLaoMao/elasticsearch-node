@@ -30,7 +30,7 @@ actions:
     action: delete_indices
     description: Delete the index blocks
     options:
-      disable_action: True
+      disable_action: False
     filters:
     - filtertype: pattern
       kind: regex

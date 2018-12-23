@@ -44,7 +44,7 @@ actions:
     description: Rollover the index blocks
     options:
       name: blocks
-      disable_action: True
+      disable_action: False
       continue_if_exception: True
       conditions:
         max_age: 365d
