@@ -1,6 +1,6 @@
 # elasticsearch-node
 
-## Create & Delete Indices Tempalte
+## Create & Delete Index Tempalte
 
 If you want to customize mapping or setting of indices, just modify json files in the `templates` directory.
 
