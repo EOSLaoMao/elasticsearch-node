@@ -51,7 +51,7 @@ if [ "$action" = "create" ]; then
         name="${file##*/}"
         index="${name%.*}"
         printf "$index\n"
-        curl -X PUT -H "Content-Type: application/json" -d @"$file" "${url%/}/_template/$index"
+        curl -X PUT -H "Content-Type: application/json" -d @"$file" "${url%/}/_template/$index?include_type_name=true"
         printf "\n\n"
     done
 fi
